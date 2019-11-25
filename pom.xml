@@ -144,14 +144,18 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.1.0</version>
+            <version>3.2.0</version>
         </dependency>
         <!--velocity 模板引擎-->
-        <!--dependency>
+        <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
             <version>2.1</version>
-        </dependency-->
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.freemarker</groupId>

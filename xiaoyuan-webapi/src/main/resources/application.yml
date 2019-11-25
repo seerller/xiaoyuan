@@ -7,7 +7,7 @@ spring:
   #数据库连接
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-wz942s30t361ycw1ufo.mysql.rds.aliyuncs.com:3306/xiaoyuan
+    url: jdbc:mysql://rm-wz942s30t361ycw1ufo.mysql.rds.aliyuncs.com:3306/xiaoyuan?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: xiaoyuan123
     password: xiaoyuan
     type: com.alibaba.druid.pool.DruidDataSource
