@@ -1,7 +1,7 @@
 package com.xiaoyuan.service.impl;
 
 import com.xiaoyuan.model.EducationalAdministration;
-import com.xiaoyuan.mapper.EducationalAdministrationMapper;
+import com.xiaoyuan.mapper.Educational_administrationMapper;
 import com.xiaoyuan.service.IEducationalAdministrationService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-11-26
  */
 @Service
-public class EducationalAdministrationServiceImpl extends ServiceImpl<EducationalAdministrationMapper, EducationalAdministration> implements IEducationalAdministrationService {
+public class EducationalAdministrationServiceImpl extends ServiceImpl<EducationalAdministration, EducationalAdministration> implements IEducationalAdministrationService {
 
 }
