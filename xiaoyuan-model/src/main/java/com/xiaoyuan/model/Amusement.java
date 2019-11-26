@@ -10,6 +10,9 @@ import java.util.Date;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.stereotype.Repository;
+
+import javax.annotation.PreDestroy;
 
 /**
  * <p>
@@ -23,6 +26,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("tl_school_amusement")
+@Repository
 public class Amusement implements Serializable {
 
     private static final long serialVersionUID = 1L;

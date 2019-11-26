@@ -10,11 +10,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.apache.poi.ss.formula.functions.T;
+import org.springframework.stereotype.Repository;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("tl_school_attence")
+@Repository
 public class Attence implements Serializable{
     private static final long serialVersionUID = 1L;
 
