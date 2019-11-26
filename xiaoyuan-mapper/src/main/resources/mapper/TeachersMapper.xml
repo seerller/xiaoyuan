@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiaoyuan.mapper.TeachersMapper">
+    <resultMap id="TeacherBaseResultMap" type="com.xiaoyuan.model.Teachers">
+        <id column="teacher_ID" property="teacherID" jdbcType="INTEGER"/>
+        <result column="teachername" property="teachername" jdbcType="VARCHAR"/>
+        <result column="schoolname" property="schoolname" jdbcType="VARCHAR"/>
+        <result column="classname" property="classname" jdbcType="VARCHAR"/>
+        <result column="post" property="post" jdbcType="VARCHAR"/>
+        <result column="teacher_mobilephone" property="teachermobliephone" jdbcType="INTEGER"/>
+        <result column="teacher_telephone" property="teachertelephone" jdbcType="INTEGER"/>
+        <result column="teacher_adress" property="teacheraddress" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
 
+    </resultMap>
+    <select id="getTeacherList" parameterType="com.xiaoyuan.model.Teachers">
+        select * from tl_school_teachers
+    </select>
 </mapper>
