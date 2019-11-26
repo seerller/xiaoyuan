@@ -7,13 +7,18 @@
         <result column="schoolname" property="schoolname" jdbcType="VARCHAR"/>
         <result column="classname" property="classname" jdbcType="VARCHAR"/>
         <result column="post" property="post" jdbcType="VARCHAR"/>
-        <result column="teacher_mobilephone" property="teachermobliephone" jdbcType="INTEGER"/>
-        <result column="teacher_telephone" property="teachertelephone" jdbcType="INTEGER"/>
-        <result column="teacher_adress" property="teacheraddress" jdbcType="VARCHAR"/>
+        <result column="teacher_mobilephone" property="teacherMobliephone" jdbcType="INTEGER"/>
+        <result column="teacher_telephone" property="teacherTelephone" jdbcType="INTEGER"/>
+        <result column="teacher_adress" property="teacherAddress" jdbcType="VARCHAR"/>
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
 
     </resultMap>
     <select id="getTeacherList" parameterType="com.xiaoyuan.model.Teachers">
         select * from tl_school_teachers
     </select>
+    <insert id="addTeachers" parameterType="com.xiaoyuan.model.Teachers">
+        insert into table tl_school_teachers(teacher_ID,teachername,(select classname from tl_school_class),
+        post,teacher_mobliephone,teacher_telephone,teacher_address,create_time)
+        values (#{teacher_ID,jdbcTpye=INTEGER})
+    </insert>
 </mapper>

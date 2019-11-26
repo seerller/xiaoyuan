@@ -30,14 +30,13 @@ public class Teachers implements Serializable {
     @TableId("teacher_ID")
     private Integer teacherId;
 
-    @TableField("student_ID")
-    private Integer studentId;
+    @TableField("class_id")
+    private Integer classID;
 
     private String teachername;
 
     private String schoolname;
 
-    private String course;
 
     private String post;
 
