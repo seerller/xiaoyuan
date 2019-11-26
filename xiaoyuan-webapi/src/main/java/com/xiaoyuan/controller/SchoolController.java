@@ -4,6 +4,7 @@ package com.xiaoyuan.controller;
 import com.github.pagehelper.ISelect;
 import com.xiaoyuan.service.impl.SchoolServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
+import io.swagger.annotations.ApiOperation;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,7 @@ public class SchoolController {
     SchoolServiceImpl schoolService;
     @Test
     @RequestMapping(value = "/List<School>" , method = RequestMethod.GET)
+    @ApiOperation(value="根据主键查询学校信息", notes="查询学校信息")
     public MessageBean selectByPrimaryKey(){
         return selectByPrimaryKey();
     }
