@@ -9,7 +9,7 @@
         <result column="post" property="post" jdbcType="VARCHAR"/>
         <result column="teacher_mobilephone" property="teacherMobliephone" jdbcType="INTEGER"/>
         <result column="teacher_telephone" property="teacherTelephone" jdbcType="INTEGER"/>
-        <result column="teacher_adress" property="teacherAddress" jdbcType="VARCHAR"/>
+        <result column="teacher_address" property="teacherAddress" jdbcType="VARCHAR"/>
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
 
     </resultMap>
@@ -17,8 +17,27 @@
         select * from tl_school_teachers
     </select>
     <insert id="addTeachers" parameterType="com.xiaoyuan.model.Teachers">
-        insert into table tl_school_teachers(teacher_ID,teachername,(select classname from tl_school_class),
-        post,teacher_mobliephone,teacher_telephone,teacher_address,create_time)
-        values (#{teacher_ID,jdbcTpye=INTEGER})
+        insert into tl_school_teachers(teacher_ID,teachername,class ,
+        post,teacher_mobliephone,teacher_telephone,teacher_address)
+        values (#{teacher_ID,jdbcTpye=INTEGER}, (select classname from tl_school_class)=#{teachername,jdbcType=VARCHAR},
+        #{schoolname,jdbcType=VARCHAR}, #{classname,jdbcType=VARHCAR}, #{post,jdbcType=VARCHAR},
+        #{teacher_mobliephone,jdbcType=INTEGER}, #{teacher_telephone,jdbcType=INTEGER},
+        #{teacher_address,jdbcType=VARCHAR})
     </insert>
+    <update id="updateTeachers" parameterType="com.xiaoyuan.model.Teachers">
+        update tl_school_teachers
+        set teachername=#{teachername,jdbcType=VARCHAR},
+            schoolname=#{schoolname,jdbcType=VARCHAR},
+            classname=#{classname,jdbcType=VARHCAR},
+            post=#{post,jdbcType=VARCHAR},
+            teacher_mobilephone=#{teacher_mobliephone,jdbcType=INTEGER},
+            teacher_telephone=#{teacher_telephone,jdbcType=INTEGER},
+            teacher_address=#{teacher_address,jdbcType=VARCHAR}
+        where
+            teacher_ID=#{teacher_ID,jdbcTpye=INTEGER}
+    </update>
+    <delete id="deleteTeachers" parameterType="com.xiaoyuan.model.Teachers">
+        delete from tl_school_teachers
+        where teacher_ID=#{teacher_ID,jdbcTpye=INTEGER}
+    </delete>
 </mapper>
