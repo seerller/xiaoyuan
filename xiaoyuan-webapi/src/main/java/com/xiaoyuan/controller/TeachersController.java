@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -33,16 +34,25 @@ public class TeachersController {
     @Autowired
     TeachersServiceImpl teachersService;
 
+    @Test
     @RequestMapping(value = "/List<Teachers>", method = RequestMethod.GET)
     @ApiOperation(value = "查询教师所有信息", notes = "教师信息")
     public MessageBean getTeacherList(){
-        return getTeacherList();
+        //try{
+            return getTeacherList();
+        //}catch(Exception e){
+        //    System.out.println("操作失败，请重试");
+        //}
     }
 
     @RequestMapping(value = "/addTeachers", method = RequestMethod.POST)
     @ApiOperation(value ="新增教师", notes = "新增教师")
     public void addTeachers(Teachers teachers){
-        teachersService.addTeachers(teachers);
+        try{
+            teachersService.addTeachers(teachers);
+        }catch(Exception e){
+            System.out.println("信息错误，请重新输入");
+        }
     }
 
     @RequestMapping(value = "/updateTeachers", method = RequestMethod.POST)
