@@ -4,6 +4,7 @@ package com.xiaoyuan.controller;
 import com.github.pagehelper.ISelect;
 import com.xiaoyuan.service.impl.SchoolServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,13 @@ import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ *  学校控制层
  * </p>
  *
  * @author jobob
  * @since 2019-11-26
  */
+@Api(value = "/School", description = "学校管理模块")
 @RestController
 @RequestMapping("/mapper/school")
 public class SchoolController {
