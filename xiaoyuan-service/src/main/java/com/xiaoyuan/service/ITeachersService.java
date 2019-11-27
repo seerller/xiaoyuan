@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface ITeachersService extends IService<Teachers> {
     List<Teachers> getTeacherList();
-    void addTeachers();
-    void updateTeachers();
-    void deleteTeachers();
+    void addTeachers(Teachers teachers);
+    void updateTeachers(Teachers teachers);
+    void deleteTeachers(Teachers teachers);
 }

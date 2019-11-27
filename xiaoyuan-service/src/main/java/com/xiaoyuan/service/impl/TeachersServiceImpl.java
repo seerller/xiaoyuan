@@ -32,21 +32,24 @@ public class TeachersServiceImpl extends ServiceImpl<TeachersMapper, Teachers> i
      * 新增教师
      * **/
     @Override
-    public void addTeachers() {
+    public void addTeachers(Teachers teachers) {
+        teachersMapper.addTeachers(teachers);
 
     }
     /**
      * 修改教师
      * **/
     @Override
-    public void updateTeachers() {
+    public void updateTeachers(Teachers teachers) {
+        teachersMapper.updateTeachers(teachers);
 
     }
     /**
      * 删除教师
      * **/
     @Override
-    public void deleteTeachers() {
+    public void deleteTeachers(Teachers teachers) {
+        teachersMapper.deleteTeachers(teachers);
 
     }
 
