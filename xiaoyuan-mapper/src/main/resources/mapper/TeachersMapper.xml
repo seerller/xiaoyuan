@@ -40,4 +40,16 @@
         delete from tl_school_teachers
         where teacher_ID=#{teacher_ID,jdbcTpye=INTEGER}
     </delete>
+    <update id="updateTeachers" parameterType="com.xiaoyuan.model.Teachers">
+        update tl_school_teachers
+        set teachername=#{teachername,jdbcType=VARCHAR},
+            schoolname=#{schoolname,jdbcType=VARCHAR},
+            classname=#{classname,jdbcType=VARHCAR},
+            post=#{post,jdbcType=VARCHAR},
+            teacher_mobilephone=#{teacher_mobliephone,jdbcType=INTEGER},
+            teacher_telephone=#{teacher_telephone,jdbcType=INTEGER},
+            teacher_address=#{teacher_address,jdbcType=VARCHAR}
+        where
+            teacher_ID=#{teacher_ID,jdbcTpye=INTEGER}
+    </update>
 </mapper>

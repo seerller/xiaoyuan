@@ -15,5 +15,8 @@ import java.util.List;
  */
 public interface TeachersMapper extends BaseMapper<Teachers> {
     List<Teachers> getTeacherList();
+    void addTeachers();
+    void updateTeachers();
+    void deleteTeachers();
 
 }

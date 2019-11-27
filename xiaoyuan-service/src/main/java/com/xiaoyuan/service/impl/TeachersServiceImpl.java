@@ -21,10 +21,33 @@ import java.util.List;
 public class TeachersServiceImpl extends ServiceImpl<TeachersMapper, Teachers> implements ITeachersService {
     @Autowired
     TeachersMapper teachersMapper;
-
+    /**
+     * 查询教师
+     * **/
     @Override
     public List<Teachers> getTeacherList() {
         return null;
+    }
+    /**
+     * 新增教师
+     * **/
+    @Override
+    public void addTeachers() {
+
+    }
+    /**
+     * 修改教师
+     * **/
+    @Override
+    public void updateTeachers() {
+
+    }
+    /**
+     * 删除教师
+     * **/
+    @Override
+    public void deleteTeachers() {
+
     }
 
 }
