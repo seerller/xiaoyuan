@@ -53,4 +53,13 @@ public class TeachersServiceImpl extends ServiceImpl<TeachersMapper, Teachers> i
 
     }
 
+    /**
+     * 冻结教师
+     * @param teachersstatus
+     */
+    @Override
+    public void setTeachersstatus(Teachers teachersstatus) {
+        teachersMapper.setTeachersstatus(teachersstatus);
+    }
+
 }

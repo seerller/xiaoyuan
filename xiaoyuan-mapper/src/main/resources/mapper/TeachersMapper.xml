@@ -7,15 +7,18 @@
         <result column="schoolname" property="schoolname" jdbcType="VARCHAR"/>
         <result column="classname" property="classname" jdbcType="VARCHAR"/>
         <result column="post" property="post" jdbcType="VARCHAR"/>
-        <result column="teacher_mobilephone" property="teacherMobliephone" jdbcType="INTEGER"/>
+        <result column="teacher_mobilephone" property="teachermobliephone" jdbcType="INTEGER"/>
         <result column="teacher_telephone" property="teacherTelephone" jdbcType="INTEGER"/>
         <result column="teacher_address" property="teacherAddress" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
 
     </resultMap>
+    <!--查询教师信息-->
     <select id="getTeacherList" parameterType="com.xiaoyuan.model.Teachers">
         select * from tl_school_teachers
     </select>
+    <!--增加教师信息-->
     <insert id="addTeachers" parameterType="com.xiaoyuan.model.Teachers">
         insert into tl_school_teachers(teacher_ID,teachername,class ,
         post,teacher_mobliephone,teacher_telephone,teacher_address)
@@ -24,6 +27,7 @@
         #{teacher_mobliephone,jdbcType=INTEGER}, #{teacher_telephone,jdbcType=INTEGER},
         #{teacher_address,jdbcType=VARCHAR})
     </insert>
+    <!--修改教师信息-->
     <update id="updateTeachers" parameterType="com.xiaoyuan.model.Teachers">
         update tl_school_teachers
         set teachername=#{teachername,jdbcType=VARCHAR},
@@ -36,20 +40,18 @@
         where
             teacher_ID=#{teacher_ID,jdbcTpye=INTEGER}
     </update>
+    <!--删除教师信息-->
     <delete id="deleteTeachers" parameterType="com.xiaoyuan.model.Teachers">
         delete from tl_school_teachers
         where teacher_ID=#{teacher_ID,jdbcTpye=INTEGER}
     </delete>
-    <update id="updateTeachers" parameterType="com.xiaoyuan.model.Teachers">
+    <!--修改教师状态信息-->
+    <update id="setTeachersstatus" parameterType="com.xiaoyuan.model.Teachers">
         update tl_school_teachers
-        set teachername=#{teachername,jdbcType=VARCHAR},
-            schoolname=#{schoolname,jdbcType=VARCHAR},
-            classname=#{classname,jdbcType=VARHCAR},
-            post=#{post,jdbcType=VARCHAR},
-            teacher_mobilephone=#{teacher_mobliephone,jdbcType=INTEGER},
-            teacher_telephone=#{teacher_telephone,jdbcType=INTEGER},
-            teacher_address=#{teacher_address,jdbcType=VARCHAR}
+        set status=#{status,jdbcType=INTEGER}
         where
-            teacher_ID=#{teacher_ID,jdbcTpye=INTEGER}
+            teacher_ID=#{teacher_ID,jdbcType=INTEGER}
     </update>
+
+
 </mapper>

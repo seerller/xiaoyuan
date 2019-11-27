@@ -18,4 +18,5 @@ public interface ITeachersService extends IService<Teachers> {
     void addTeachers(Teachers teachers);
     void updateTeachers(Teachers teachers);
     void deleteTeachers(Teachers teachers);
+    void setTeachersstatus(Teachers teachersstatus);
 }

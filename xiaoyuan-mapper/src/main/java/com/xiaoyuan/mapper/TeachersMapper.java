@@ -1,7 +1,7 @@
 package com.xiaoyuan.mapper;
 
-import com.xiaoyuan.model.Teachers;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xiaoyuan.model.Teachers;
 
 import java.util.List;
 
@@ -18,5 +18,6 @@ public interface TeachersMapper extends BaseMapper<Teachers> {
     void addTeachers(Teachers teachers);
     void updateTeachers(Teachers teachers);
     void deleteTeachers(Teachers teachers);
+    void setTeachersstatus(Teachers teachersstatus);
 
 }

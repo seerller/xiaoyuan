@@ -56,5 +56,9 @@ public class TeachersController {
     public void deleteTReachers(Teachers teachers){
         teachersService.deleteTeachers(teachers);
     }
-
+    @RequestMapping(value = "/setTeachersstatus", method = RequestMethod.POST)
+    @ApiOperation(value = "冻结教师", notes = "冻结教师")
+    public void setTeachersstatus(Teachers teachers) {
+        teachersService.setTeachersstatus(teachers);
+    }
 }

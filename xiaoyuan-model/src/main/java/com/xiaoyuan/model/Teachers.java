@@ -40,11 +40,13 @@ public class Teachers implements Serializable {
 
     private String post;
 
-    private Integer teacherMobilephone;
+    private Integer teachermobilephone;
 
     private Integer teacherTelephone;
 
-    private String teacherAdress;
+    private String teacherAddress;
+
+    private Integer status;
 
     private LocalDateTime createTime;
 
