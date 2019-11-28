@@ -33,7 +33,7 @@ public class School implements Serializable {
 
     private String schoolname;
 
-    private String adress;
+    private String address;
 
     @TableField("addTime")
     private Date addTime;
@@ -136,8 +136,8 @@ public class School implements Serializable {
      *
      * @mbggenerated Mon Nov 25 17:21:19 CST 2019
      */
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     /**
@@ -148,8 +148,8 @@ public class School implements Serializable {
      *
      * @mbggenerated Mon Nov 25 17:21:19 CST 2019
      */
-    public void setAdress(String adress) {
-        this.adress = adress == null ? null : adress.trim();
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 
 

@@ -2,6 +2,7 @@ package com.xiaoyuan.controller;
 
 
 import com.github.pagehelper.ISelect;
+import com.xiaoyuan.model.School;
 import com.xiaoyuan.service.impl.SchoolServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
 import io.swagger.annotations.Api;
@@ -34,6 +35,11 @@ public class SchoolController {
     @ApiOperation(value="根据主键查询学校信息", notes="查询学校信息")
     public MessageBean selectByPrimaryKey(){
         return selectByPrimaryKey();
+    }
+    @RequestMapping(value = "/updateByPrimaryKey<School>" , method = RequestMethod.POST)
+    @ApiOperation(value="修改学校信息", notes="修改学校信息")
+    public void updateByPrimaryKey(School record){
+        schoolService.updateByPrimaryKey(record);
     }
 
 
