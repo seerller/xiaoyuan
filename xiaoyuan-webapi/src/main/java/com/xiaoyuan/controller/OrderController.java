@@ -41,5 +41,15 @@ public class OrderController {
     public void insert(Order record){
         orderService.insert(record);
     }
+    @RequestMapping(value = "/updateByPrimaryKey", method = RequestMethod.POST)
+    @ApiOperation(value = "修改订单", notes = "修改订单")
+    public void updateByPrimaryKey(Order record){
+        orderService.updateByPrimaryKey(record);
+    }
+    @RequestMapping(value = "/deleteByPrimaryKey", method = RequestMethod.POST)
+    @ApiOperation(value = "删除订单", notes = "删除订单")
+    public void  deleteByPrimaryKey(Integer orderId){
+        orderService.deleteByPrimaryKey(orderId);
+    }
 
 }
