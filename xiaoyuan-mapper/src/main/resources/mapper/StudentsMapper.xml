@@ -87,6 +87,4 @@
     gurdian, gurdian_mobliephone, student_telephone, status, create_time
     from tl_school_students
   </select>
-
-
 </mapper>
