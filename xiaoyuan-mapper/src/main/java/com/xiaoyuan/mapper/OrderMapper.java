@@ -45,4 +45,6 @@ public interface OrderMapper extends BaseMapper<OrderMapper>{
      * @mbggenerated Mon Nov 25 17:09:46 CST 2019
      */
     int updateByPrimaryKey(Order record);
+
+    List<Order> selectOrders();
 }
