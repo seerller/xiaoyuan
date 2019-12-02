@@ -145,4 +145,29 @@ public class AnnouncementServiceImpl  implements IAnnouncementService {
     public BaseMapper<Announcement> getBaseMapper() {
         return null;
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer announcementId) {
+        return 0;
+    }
+
+    @Override
+    public int insert(Announcement record) {
+        return 0;
+    }
+
+    @Override
+    public Announcement selectByPrimaryKey(Integer announcementId) {
+        return null;
+    }
+
+    @Override
+    public List<Announcement> selectAll() {
+        return null;
+    }
+
+    @Override
+    public int updateByPrimaryKey(Announcement record) {
+        return 0;
+    }
 }
