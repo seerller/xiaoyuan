@@ -12,6 +12,7 @@
     <result column="studentname" property="studentname" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="VARCHAR" />
     <result column="classname" property="classname" jdbcType="VARCHAR" />
+    <result column="school_ID" property="schoolID" jdbcType="INTEGER"/>
     <result column="schoolname" property="schoolname" jdbcType="VARCHAR" />
     <result column="student_mobliephone" property="studentMobliephone" jdbcType="INTEGER" />
     <result column="parentname" property="parentName" jdbcType="VARCHAR" />
@@ -95,4 +96,10 @@
     left join tl_school_parent
     on tl_school_parent.parent_id=tl_school_student.parent_id
   </select>
+
+  <update id="changeStudentsSchool" parameterType="com.xiaoyuan.model.Students">
+    update tl_school_students
+    set schoolname = #{schoolname,jdbcType=VARCHAR},
+        schoolID = #{schoolID,jdbcType=INTEGER}
+  </update>
 </mapper>

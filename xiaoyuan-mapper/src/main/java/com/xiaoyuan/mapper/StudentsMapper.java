@@ -47,5 +47,7 @@ public interface StudentsMapper extends BaseMapper<StudentsMapper>{
 
     List<Students> selectStudents();
 
+    int changeStudentsSchool(Students schoolname);
+
 
 }

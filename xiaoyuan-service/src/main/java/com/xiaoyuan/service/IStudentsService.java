@@ -54,6 +54,18 @@ public interface IStudentsService extends IService<Students> {
      */
     int updateByPrimaryKey(Students record);
 
+    /**
+     * 查询学生所有信息
+     * @return
+     */
     List<Students> selectStudents();
+
+    /**
+     * 学生转校
+     * @param schoolname
+     * @return
+     */
+    int changeStudentsSchool(Students schoolname);
+
 
 }
