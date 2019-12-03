@@ -44,4 +44,8 @@ public interface StudentsMapper extends BaseMapper<StudentsMapper>{
      * @mbggenerated Mon Nov 25 17:09:46 CST 2019
      */
     int updateByPrimaryKey(Students record);
+
+    List<Students> selectStudents();
+
+
 }

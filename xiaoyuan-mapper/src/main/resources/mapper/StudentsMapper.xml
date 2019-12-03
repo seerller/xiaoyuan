@@ -14,8 +14,8 @@
     <result column="classname" property="classname" jdbcType="VARCHAR" />
     <result column="schoolname" property="schoolname" jdbcType="VARCHAR" />
     <result column="student_mobliephone" property="studentMobliephone" jdbcType="INTEGER" />
-    <result column="gurdian" property="gurdian" jdbcType="VARCHAR" />
-    <result column="gurdian_mobliephone" property="gurdianMobliephone" jdbcType="INTEGER" />
+    <result column="parentname" property="parentName" jdbcType="VARCHAR" />
+    <result column="parent_mobliephone" property="parentMobliephone" jdbcType="INTEGER" />
     <result column="student_telephone" property="studentTelephone" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -86,5 +86,13 @@
     select student_ID, class_id, studentname, grade, classname, schoolname, student_mobliephone, 
     gurdian, gurdian_mobliephone, student_telephone, status, create_time
     from tl_school_students
+  </select>
+
+  <select id="selectstudents" resultMap="BaseResultMap">
+    <!--查询学生信息-->
+    select studentname, student_mobliephone, schoolname, classname, gruidian, gurdian_mobilephone,address, status
+    from tl_school_student
+    left join tl_school_parent
+    on tl_school_parent.parent_id=tl_school_student.parent_id
   </select>
 </mapper>
