@@ -51,5 +51,7 @@ public interface StudentsMapper extends BaseMapper<StudentsMapper>{
 
     int changeStudentsClass(Students classname);
 
+    int frozeStudent(Students status);
+
 
 }

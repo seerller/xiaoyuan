@@ -66,5 +66,11 @@ public class StudentsController {
         studentsService.changeStudentsClass(classname);
     }
 
+    @RequestMapping(value = "/frozeStudents", method = RequestMethod.POST)
+    @ApiOperation(value = "冻结学生", notes = "冻结学生")
+    public void frozeStudents(@RequestParam(value = "status") Students status){
+        studentsService.frozeStudent(status);
+    }
+
 
 } 

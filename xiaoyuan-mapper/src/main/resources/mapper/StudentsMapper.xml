@@ -110,5 +110,11 @@
     set classname,
         class_id
   </update>
+  
+  <update id="frozeStudent" parameterType="com.xiaoyuan.model.Students">
+    <!--冻结学生-->
+    update tl_school_students
+    set status ={Status,jdbcType=VARCHAR}
+  </update>
 
 </mapper>

@@ -74,5 +74,12 @@ public interface IStudentsService extends IService<Students> {
      */
     int changeStudentsClass(Students classname);
 
+    /**
+     * 冻结学生
+     * @param status
+     * @return
+     */
+    int frozeStudent(Students status);
+
 
 }

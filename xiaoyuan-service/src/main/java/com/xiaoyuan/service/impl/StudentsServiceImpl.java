@@ -67,6 +67,11 @@ public class StudentsServiceImpl implements IStudentsService {
     }
 
     @Override
+    public int frozeStudent(Students status) {
+        return 0;
+    }
+
+    @Override
     public boolean save(Students entity) {
         return false;
     }
