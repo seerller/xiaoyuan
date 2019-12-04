@@ -1,6 +1,8 @@
 package com.xiaoyuan.controller;
 
-
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xiaoyuan.controller.common.BaseController;
 import com.xiaoyuan.model.Students;
 import com.xiaoyuan.service.impl.StudentsServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
@@ -47,7 +49,7 @@ public class StudentsController {
     }
 
     @RequestMapping(value = "/updateByPriamryKey", method = RequestMethod.POST)
-    @ApiOperation(value = "修改学生信息", notes = "修改学生信息")
+    @ApiOperation(value = "修改学生", notes = "修改学生")
     public void updateByPriamryKey(Integer studentId){
         studentsService.deleteByPrimaryKey(studentId);
     }
