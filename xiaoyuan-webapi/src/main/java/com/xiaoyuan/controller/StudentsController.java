@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -36,7 +37,7 @@ public class StudentsController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     @ApiOperation(value = "新增学生", notes = "新增学生")
     public void insert(Students record){
-        studentsService.insert(record);
+        studentsService.save(record);
     }
 
     @RequestMapping(value = "/deleteByPriamryKey", method = RequestMethod.POST)
@@ -51,7 +52,19 @@ public class StudentsController {
         studentsService.deleteByPrimaryKey(studentId);
     }
 
-    public void
+    @RequestMapping(value = "/changeStudentsSchool", method = RequestMethod.POST)
+    @ApiOperation(value = "学生转校", notes = "学生转校")
+    public void changeStudentsSchool(@RequestParam(value = "schoolname") Students schoolname){
+        studentsService.changeStudentsSchool(schoolname);
+    }
+
+    @RequestMapping(value = "/changeStudentsClass", method = RequestMethod.POST)
+    @ApiOperation(value = "学生转班", notes = "学生转班")
+    public void changeStudensClass(@RequestParam(value="classname") Students classname){
+        studentsService.changeStudentsClass(classname);
+    }
+
+
 
 
 } 

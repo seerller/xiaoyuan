@@ -67,5 +67,12 @@ public interface IStudentsService extends IService<Students> {
      */
     int changeStudentsSchool(Students schoolname);
 
+    /**
+     * 学生转班
+     * @param classname
+     * @return
+     */
+    int changeStudentsClass(Students classname);
+
 
 }

@@ -98,8 +98,17 @@
   </select>
 
   <update id="changeStudentsSchool" parameterType="com.xiaoyuan.model.Students">
+    <!--学生转校-->
     update tl_school_students
     set schoolname = #{schoolname,jdbcType=VARCHAR},
         schoolID = #{schoolID,jdbcType=INTEGER}
   </update>
+
+  <update id="changeStucentsClass" parameterType="com.xiaoyuan.model.Students">
+    <!--学生转班-->
+    update tl_school_students
+    set classname,
+        class_id
+  </update>
+
 </mapper>

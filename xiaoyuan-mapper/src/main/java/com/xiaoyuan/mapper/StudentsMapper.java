@@ -49,5 +49,7 @@ public interface StudentsMapper extends BaseMapper<StudentsMapper>{
 
     int changeStudentsSchool(Students schoolname);
 
+    int changeStudentsClass(Students classname);
+
 
 }

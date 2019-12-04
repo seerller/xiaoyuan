@@ -57,6 +57,16 @@ public class StudentsServiceImpl implements IStudentsService {
     }
 
     @Override
+    public int changeStudentsSchool(Students schoolname) {
+        return 0;
+    }
+
+    @Override
+    public int changeStudentsClass(Students classname) {
+        return 0;
+    }
+
+    @Override
     public boolean save(Students entity) {
         return false;
     }
