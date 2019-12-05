@@ -7,6 +7,7 @@ import com.xiaoyuan.model.News;
 import com.xiaoyuan.mapper.NewsMapper;
 import com.xiaoyuan.service.INewsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -25,6 +26,8 @@ import java.util.function.Function;
  */
 @Service
 public class NewsServiceImpl implements INewsService {
+    @Autowired
+    NewsMapper newsMapper;
 
     @Override
     public int deleteByPrimaryKey(Integer newsId) {

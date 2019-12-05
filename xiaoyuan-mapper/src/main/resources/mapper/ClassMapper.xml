@@ -14,6 +14,7 @@
     <result column="grade" property="grade" jdbcType="VARCHAR" />
     <result column="teachername" property="teachername" jdbcType="VARCHAR" />
     <result column="floor" property="floor" jdbcType="VARCHAR" />
+    <result column="status" property="Status" jdbcType="VARCHAR"/>
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
@@ -73,4 +74,10 @@
     select class_id, classname, school_ID, schoolname, grade, teachername, floor, create_time
     from tl_school_class
   </select>
+
+  <update id="changeStatus" parameterMap="com.xiaoyuan.model.Class">
+    <!--更改班级状态-->
+    update tl_school_class
+    set status=#{Status,jdbcType=VARCHAR}
+  </update>
 </mapper>

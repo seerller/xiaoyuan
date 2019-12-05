@@ -11,6 +11,7 @@ import com.xiaoyuan.model.Staff;
 import com.xiaoyuan.mapper.StaffMapper;
 import com.xiaoyuan.service.IStaffService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -29,6 +30,8 @@ import java.util.function.Function;
  */
 @Service
 public class StaffServiceImpl implements IStaffService {
+    @Autowired
+    StaffMapper staffMapper;
 
     @Override
     public boolean save(Staff entity) {

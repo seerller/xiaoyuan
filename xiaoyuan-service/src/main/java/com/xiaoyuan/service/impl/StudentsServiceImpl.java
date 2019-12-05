@@ -7,6 +7,7 @@ import com.xiaoyuan.model.Students;
 import com.xiaoyuan.mapper.StudentsMapper;
 import com.xiaoyuan.service.IStudentsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -25,6 +26,8 @@ import java.util.function.Function;
  */
 @Service
 public class StudentsServiceImpl implements IStudentsService {
+    @Autowired
+    StudentsMapper studentsMapper;
 
     @Override
     public int deleteByPrimaryKey(Integer studentId) {
