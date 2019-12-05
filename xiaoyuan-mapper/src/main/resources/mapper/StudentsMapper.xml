@@ -114,7 +114,13 @@
   <update id="frozeStudent" parameterType="com.xiaoyuan.model.Students">
     <!--冻结学生-->
     update tl_school_students
-    set status ={Status,jdbcType=VARCHAR}
+    set status =#{Status,jdbcType=VARCHAR}
   </update>
+  
+  <update id="failStudent" parameterType="com.xiaoyuan.model.Students">
+    <!--学生留级-->
+    update tl_school_students
+    set grade=#{grade,jdbcType=VARCHAR}
+   </update>
 
 </mapper>

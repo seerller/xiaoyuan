@@ -72,5 +72,11 @@ public class StudentsController {
         studentsService.frozeStudent(status);
     }
 
+    @RequestMapping(value = "/failStudent", method = RequestMethod.POST)
+    @ApiOperation(value = "学生留级", notes = "学生留级")
+    public void failStudent(@RequestParam(value = "grade") Students grade){
+        studentsService.failStudent(grade);
+    }
+
 
 } 
