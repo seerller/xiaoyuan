@@ -55,6 +55,21 @@ public class ClassServiceImpl implements IClassService {
     }
 
     @Override
+    public List<Class> selectClass() {
+        return null;
+    }
+
+    @Override
+    public int addClass(Class record) {
+        return 0;
+    }
+
+    @Override
+    public int updateClass(Class record) {
+        return 0;
+    }
+
+    @Override
     public boolean save(Class entity) {
         return false;
     }

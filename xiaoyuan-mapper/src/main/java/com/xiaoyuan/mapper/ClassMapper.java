@@ -43,4 +43,24 @@ public interface ClassMapper extends BaseMapper<ClassMapper>{
      * @return
      */
     int changeStatus(Class status);
+
+    /**
+     * 查询班级
+     * @return
+     */
+    List<Class> selectClass();
+
+    /**
+     * 新增班级
+     * @param record
+     * @return
+     */
+    int addClass(Class record);
+
+    /**
+     * 修改班级
+     * @param record
+     * @return
+     */
+    int updateClass(Class record);
 }

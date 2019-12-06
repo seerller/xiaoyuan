@@ -80,4 +80,29 @@
     update tl_school_class
     set status=#{Status,jdbcType=VARCHAR}
   </update>
+  
+  <select id="selectClass" resultMap="BaseResultMap">
+    <!--查询班级信息-->
+    select class_id, schoolname, classname, create_time, start_time, end_time, teachername, count(student_ID)
+    from tl_school_educational_administration
+    left join tl_school_student on tl_school_students.class_id=tl_school_educational_administration.class_id
+  </select>
+
+  <insert id="addClass" parameterType="com.xiaoyuan.model.Class">
+    <!--新增班级-->
+    insert into tl_school_educational_administration(
+    schoolname, classname,start_time, cource, teachername, status
+    )
+    values (
+    #{schoolname}, #{classname}
+    #{start_time}, #{cource}
+    #{teachername}, #{status}
+    )
+  </insert>
+
+  <update id="updateClass" parameterType="com.xiaoyuan.model.Class">
+    <!--修改班级-->
+    update tl_school_educational_administration
+    set  schoolname, classname,start_time, cource, teachername, status
+  </update>
 </mapper>
