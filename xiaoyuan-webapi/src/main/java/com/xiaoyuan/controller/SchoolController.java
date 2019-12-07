@@ -2,6 +2,7 @@ package com.xiaoyuan.controller;
 
 
 import com.github.pagehelper.ISelect;
+import com.xiaoyuan.controller.common.BaseController;
 import com.xiaoyuan.model.School;
 import com.xiaoyuan.service.impl.SchoolServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
@@ -27,7 +28,7 @@ import java.util.List;
 @Api(value = "/School", description = "学校管理模块")
 @RestController
 @RequestMapping("/mapper/school")
-public class SchoolController {
+public class SchoolController extends BaseController {
     @Autowired
     SchoolServiceImpl schoolService;
     @Test

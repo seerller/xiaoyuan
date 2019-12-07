@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "/Students", description = "学生管理模块")
 @RestController
 @RequestMapping("/mapper/students")
-public class StudentsController {
+public class StudentsController extends BaseController{
     @Autowired
     StudentsServiceImpl studentsService;
 

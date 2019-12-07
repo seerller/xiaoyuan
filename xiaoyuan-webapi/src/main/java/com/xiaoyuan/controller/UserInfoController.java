@@ -1,6 +1,7 @@
 package com.xiaoyuan.controller;
 
 
+import com.xiaoyuan.controller.common.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/mapper/user-info")
-public class UserInfoController {
+public class UserInfoController extends BaseController {
 
 }

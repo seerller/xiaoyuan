@@ -1,6 +1,7 @@
 package com.xiaoyuan.controller;
 
 
+import com.xiaoyuan.controller.common.BaseController;
 import com.xiaoyuan.model.Order;
 import com.xiaoyuan.service.impl.OrderServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "/Order", description = "订单管理模块")
 @RestController
 @RequestMapping("/mapper/order")
-public class OrderController {
+public class OrderController extends BaseController {
     @Autowired
     OrderServiceImpl orderService;
     @RequestMapping(value = "/selectAll", method = RequestMethod.GET)

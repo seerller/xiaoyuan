@@ -188,4 +188,7 @@ public class ClassServiceImpl implements IClassService {
     public BaseMapper<Class> getBaseMapper() {
         return null;
     }
+
+    public void save(java.lang.Class record) {
+    }
 }
