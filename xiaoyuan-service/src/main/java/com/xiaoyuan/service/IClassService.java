@@ -51,7 +51,7 @@ public interface IClassService extends IService<Class> {
      * @param status
      * @return
      */
-    int changeStatus(Class status);
+    int changeStatus(String status);
 
     /**
      * 查询班级

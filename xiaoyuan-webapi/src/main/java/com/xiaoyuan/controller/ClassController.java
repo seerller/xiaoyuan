@@ -49,9 +49,21 @@ public class ClassController extends BaseController{
     }
 
     @RequestMapping(value = "/changeStatus", method = RequestMethod.POST)
-    @ApiOperation(value = "更爱班级状态", notes = "更爱班级状态")
-    public void changeClassStatus(Class status){
-        classService.changeStatus(status);
+    @ApiOperation(value = "更爱班级状态", notes = "上课")
+    public void classBegin(String status){
+        classService.changeStatus("上课");
+    }
+
+    @RequestMapping(value = "/changeStatus", method = RequestMethod.POST)
+    @ApiOperation(value = "更爱班级状态", notes = "下课")
+    public void classOver(String status){
+        classService.changeStatus("下课");
+    }
+
+    @RequestMapping(value = "/changeStatus", method = RequestMethod.POST)
+    @ApiOperation(value = "更爱班级状态", notes = "放学")
+    public void afterSchool(String status){
+        classService.changeStatus("放学");
     }
 
 }

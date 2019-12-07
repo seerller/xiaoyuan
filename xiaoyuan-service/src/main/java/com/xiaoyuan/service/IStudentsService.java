@@ -79,7 +79,7 @@ public interface IStudentsService extends IService<Students> {
      * @param status
      * @return
      */
-    int frozeStudent(Students status);
+    int frozeStudent(String status);
 
     /**
      * 学生留级

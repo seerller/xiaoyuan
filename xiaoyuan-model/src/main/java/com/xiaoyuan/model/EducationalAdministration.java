@@ -43,6 +43,8 @@ public class EducationalAdministration implements Serializable {
 
     private Date endTime;
 
+    private Integer schoolID;
+
     private String schoolname;
 
     private Date createTime;

@@ -35,7 +35,7 @@ public class Students implements Serializable {
 
     private String studentname;
 
-    private String grade;
+    private Integer grade;
 
     private String classname;
 
@@ -125,7 +125,7 @@ public class Students implements Serializable {
      *
      * @mbggenerated Mon Nov 25 17:21:19 CST 2019
      */
-    public String getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
@@ -137,8 +137,8 @@ public class Students implements Serializable {
      *
      * @mbggenerated Mon Nov 25 17:21:19 CST 2019
      */
-    public void setGrade(String grade) {
-        this.grade = grade == null ? null : grade.trim();
+    public void setGrade(Integer grade) {
+        this.grade = grade;
     }
 
     /**

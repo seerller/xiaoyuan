@@ -68,13 +68,13 @@ public class StudentsController extends BaseController{
 
     @RequestMapping(value = "/frozeStudents", method = RequestMethod.POST)
     @ApiOperation(value = "冻结学生", notes = "冻结学生")
-    public void frozeStudents(@RequestParam(value = "status") Students status){
-        studentsService.frozeStudent(status);
+    public void frozeStudents(@RequestParam(value = "status") String status){
+        studentsService.frozeStudent("冻结");
     }
 
     @RequestMapping(value = "/failStudent", method = RequestMethod.POST)
     @ApiOperation(value = "学生留级", notes = "学生留级")
-    public void failStudent(@RequestParam(value = "grade") Students grade){
+    public void failStudent(@RequestParam(value = "留级") Students grade){
         studentsService.failStudent(grade);
     }
 

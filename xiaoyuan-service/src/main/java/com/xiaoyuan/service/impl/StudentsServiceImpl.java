@@ -70,7 +70,7 @@ public class StudentsServiceImpl implements IStudentsService {
     }
 
     @Override
-    public int frozeStudent(Students status) {
+    public int frozeStudent(String status) {
         return 0;
     }
 
