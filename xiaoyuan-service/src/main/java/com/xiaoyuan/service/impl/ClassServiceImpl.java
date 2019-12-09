@@ -50,7 +50,7 @@ public class ClassServiceImpl implements IClassService {
     }
 
     @Override
-    public int changeStatus(Class status) {
+    public int changeStatus(String status) {
         return 0;
     }
 
