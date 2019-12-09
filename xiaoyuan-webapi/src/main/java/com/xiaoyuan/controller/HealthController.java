@@ -23,9 +23,10 @@ import sun.plugin2.message.Message;
  * @author jobob
  * @since 2019-11-26
  */
-@Api(value = "/Students", description = "健康管理控制层")
+
 @RestController
 @RequestMapping("/mapper/students")
+@Api(value = "/Students", description = "健康管理控制层")
 public class HealthController extends BaseController{
     @Autowired
     StudentsServiceImpl studentsService;
