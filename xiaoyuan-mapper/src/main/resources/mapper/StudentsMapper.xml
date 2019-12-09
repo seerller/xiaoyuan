@@ -12,11 +12,13 @@
     <result column="studentname" property="studentname" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="VARCHAR" />
     <result column="classname" property="classname" jdbcType="VARCHAR" />
+    <result column="school_ID" property="schoolID" jdbcType="INTEGER"/>
     <result column="schoolname" property="schoolname" jdbcType="VARCHAR" />
     <result column="student_mobliephone" property="studentMobliephone" jdbcType="INTEGER" />
-    <result column="gurdian" property="gurdian" jdbcType="VARCHAR" />
-    <result column="gurdian_mobliephone" property="gurdianMobliephone" jdbcType="INTEGER" />
+    <result column="parentname" property="parentName" jdbcType="VARCHAR" />
+    <result column="parent_mobliephone" property="parentMobliephone" jdbcType="INTEGER" />
     <result column="student_telephone" property="studentTelephone" jdbcType="INTEGER" />
+    <result column="health" property="health" jdbcType="VARCHAR"/>
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -87,6 +89,85 @@
     gurdian, gurdian_mobliephone, student_telephone, status, create_time
     from tl_school_students
   </select>
+
+  <select id="selectstudents" resultMap="BaseResultMap">
+    <!--查询学生信息-->
+    select studentname, student_mobliephone, schoolname, classname, gruidian, gurdian_mobilephone,address, status
+    from tl_school_student
+    left join tl_school_parent
+    on tl_school_parent.parent_id=tl_school_student.parent_id
+  </select>
+
+  <update id="changeStudentsSchool" parameterType="com.xiaoyuan.model.Students">
+    <!--学生转校-->
+    update tl_school_students
+    set schoolname = #{schoolname,jdbcType=VARCHAR},
+        schoolID = #{schoolID,jdbcType=INTEGER}
+  </update>
+
+  <update id="changeStucentsClass" parameterType="com.xiaoyuan.model.Students">
+    <!--学生转班-->
+    update tl_school_students
+    set classname,
+        class_id
+  </update>
+  
+  <update id="frozeStudent" parameterType="com.xiaoyuan.model.Students">
+    <!--冻结学生-->
+    update tl_school_students
+    set status =#{Status,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="failStudent" parameterType="com.xiaoyuan.model.Students">
+    <!--学生留级-->
+    update tl_school_students
+    set grade=#{grade,jdbcType=VARCHAR}
+   </update>
+
+  <select id="selectStudentsHealth" resultMap="BaseResultMap">
+    <!--查询学生健康信息-->
+    select studentname, student_mobliephone, schoolname,
+    classname, parentname, parent_mobliephone, student_telephone, health
+    from tl_school_student
+  </select>
+
+  <select id="selectStudentHealthByStudentID" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <!--根据主键查询学生健康信息-->
+    select studentname, student_mobliephone, schoolname,
+    classname, parentname, parent_mobliephone, student_telephone, health
+    from tl_school_student
+    where student_ID=#{studentID,jdbcType=INTEGER}
+  </select>
+
+  <insert id="addStudnetHealth" parameterType="com.xiaoyuan.model.Students">
+    <!--新增学生健康信息-->
+    insert into tl_school_students(
+    studentname, student_mobliephone, schoolname,
+    classname, parentname, parent_mobliephone, student_telephone, health
+    )
+    values ( studentname, student_mobliephone, schoolname,
+    classname, parentname, parent_mobliephone, student_telephone, health)
+  </insert>
+
+  <update id="updateStudentHealth" parameterType="com.xiaoyuan.model.Students">
+    <!--修改学生健康信息-->
+    update tl_school_students
+    set studentname,
+    student_mobliephone,
+    schoolname,
+    classname,
+    parentname,
+    parent_mobliephone,
+    student_telephone,
+    health
+  </update>
+
+  <delete id="deleteStudentHealth" parameterType="com.xiaoyuan.model.Students">
+    <!--删除学生健康信息-->
+    delete from tl_school_students
+    where student_ID = #{studentId,jdbcType=INTEGER}
+  </delete>
+
 
 
 </mapper>

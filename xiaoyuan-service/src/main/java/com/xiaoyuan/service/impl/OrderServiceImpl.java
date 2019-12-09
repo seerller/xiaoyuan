@@ -11,6 +11,7 @@ import com.xiaoyuan.model.Order;
 import com.xiaoyuan.mapper.OrderMapper;
 import com.xiaoyuan.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -29,6 +30,8 @@ import java.util.function.Function;
  */
 @Service
 public class OrderServiceImpl implements IOrderService {
+    @Autowired
+    OrderMapper orderMapper;
 
     @Override
     public int deleteByPrimaryKey(Integer orderId) {

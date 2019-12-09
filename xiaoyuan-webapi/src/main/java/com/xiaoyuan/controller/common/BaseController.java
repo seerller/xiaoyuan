@@ -1,13 +1,16 @@
 package com.xiaoyuan.controller.common;
 
+import com.alibaba.fastjson.JSON;
+import com.xiaoyuan.model.UserInfo;
+import com.xiaoyuan.tools.LogicException;
 import com.xiaoyuan.tools.MessageBean;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 /**
  * 基础控制层
  */
@@ -27,12 +30,27 @@ public class BaseController {
 
     /**
      * 统一拦截捕获异常 Exception.class
-     * @param FailedMsg
+     * @param exc
      * @return
      */
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
-
+    public MessageBean myErrorHandler(Exception exc) {
+        //判断是否是属于自定义异常
+        if(exc instanceof LogicException){
+            LogicException ex =(LogicException) exc;
+            return new MessageBean(Integer.parseInt(ex.getCode()),ex.getMsg(),JSON.parse(ex.getData()));
+        }else if(exc instanceof UnauthorizedException){
+            UnauthorizedException ex =(UnauthorizedException) exc;
+            //获取权限值
+            String paramsVal = ex.getMessage();
+            paramsVal = paramsVal.substring(paramsVal.indexOf("[")+1,paramsVal.indexOf("]"));
+            String msg = "您无[%s]权限，因此终止操作.".replace("%s",paramsVal);
+            return new MessageBean(FAL,msg,null);
+        }
+        exc.printStackTrace();
+        return resultFailed();
+    }
     /**
      * 通用错误返回函数
      * @return 通用返回信息对象

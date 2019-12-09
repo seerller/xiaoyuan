@@ -1,6 +1,7 @@
 package com.xiaoyuan.controller;
 
 
+import com.xiaoyuan.controller.common.BaseController;
 import com.xiaoyuan.model.Teachers;
 import com.xiaoyuan.service.impl.TeachersServiceImpl;
 //import com.xiaoyuan.controller.common.BaseController;
@@ -27,10 +28,10 @@ import java.util.Map;
  * @author jobob
  * @since 2019-11-26
  */
-@Api(value = "/Teachers", description = "教师管理模块")
+@Api(value = "/Teachers", description = "教师管理控制层")
 @RestController
 @RequestMapping("/mapper/teachers")
-public class TeachersController {
+public class TeachersController extends BaseController {
     @Autowired
     TeachersServiceImpl teachersService;
 

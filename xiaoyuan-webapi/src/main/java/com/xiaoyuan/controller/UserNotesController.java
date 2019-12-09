@@ -1,6 +1,8 @@
 package com.xiaoyuan.controller;
 
 
+import com.xiaoyuan.controller.common.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/mapper/user-notes")
-public class UserNotesController {
+@Api(value = "/UserNotes", description = "用户权限控制层")
+public class UserNotesController extends BaseController {
 
 }

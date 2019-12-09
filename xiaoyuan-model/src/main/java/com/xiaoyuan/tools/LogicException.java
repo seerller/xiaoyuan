@@ -74,13 +74,5 @@ public class LogicException extends RuntimeException {
         this.data = data;
     }
 
-    /**
-     * 在限制时间内提货量小于最小提货量时的异常状态码
-     */
-    public final static String LIMIT_MIN_CODE = "5001";
-    /**
-     * 在限制时间内提货量大于限制的最大提货量的异常状态码
-     */
-    public final static String LIMIT_MAX_CODE = "5002";
-
 }
+
