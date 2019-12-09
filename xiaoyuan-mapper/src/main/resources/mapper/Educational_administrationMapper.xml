@@ -79,4 +79,44 @@
     schoolname, create_time
     from tl_school_educational_administration
   </select>
+
+  <select id="selectCource" resultMap="BaseResultMap" >
+    <!--查询所有课程信息-->
+    select schoolname, classname, (start_time,'yyy-mm-dd'), ((start_time,'HH:mm')-(end_time,'HH:mm')), cource, teachername
+    from tl_school_educational_administration
+  </select>
+
+  <select id="selectCourceByCourceId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <!--查看课程详情-->
+    select schoolname, classname, (start_time,'yyy-mm-dd'), ((start_time,'HH:mm')-(end_time,'HH:mm')), cource, teachername
+    from tl_school_educational_administration
+    where cource_ID=#{courceId,jdbcType=INTEGER}
+  </select>
+
+  <insert id="addCource" parameterMap="com.xiaoyuan.model.Educational_administration">
+    <!--新增课程-->
+    insert into tl_school_educational_administration(
+    schoolname, classname, (start_time,'yyy-mm-dd'),
+    ((start_time,'HH:mm')-(end_time,'HH:mm')),
+    cource, teachername)
+    values ((schoolname), (classname), (start_time,'yyy-mm-dd'),(start_time,'HH:mm'), (end_time,'HH:mm'), (cource), (teachername))
+  </insert>
+
+  <update id="updateCource" parameterType="com.xiaoyuan.model.Educational_administration">
+    <!--修改课程信息-->
+    update tl_school_educational_administration
+    set schoolname = #{schoolname,jdbcType=VARCHAR},
+    classname = #{classname,jdbcType=VARCHAR},
+    start_time,'yyy-mm-dd'
+    start_time,'HH:mm'
+    end_time,'HH:mm'
+    cource = #{cource,jdbcType=VARCHAR},
+    teachername = #{teachername,jdbcType=VARCHAR}
+  </update>
+
+  <delete id="deleteCourceByTeachername" parameterType="com.xiaoyuan.model.Educational_administration">
+    <!--删除课程-->
+    delete from tl_school_educational_administration
+    where teachername = #{teachername,jdbcType=VARCHAR}
+  </delete>
 </mapper>

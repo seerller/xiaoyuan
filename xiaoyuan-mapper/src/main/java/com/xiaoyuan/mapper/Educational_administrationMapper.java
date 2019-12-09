@@ -44,4 +44,38 @@ public interface Educational_administrationMapper extends BaseMapper<Educational
      * @mbggenerated Mon Nov 25 17:09:46 CST 2019
      */
     int updateByPrimaryKey(EducationalAdministration record);
+
+    /**
+     * 查询所有课程
+     * @return
+     */
+    List<Educational_administrationMapper> selectCource();
+
+    /**
+     * 查询课程具体信息
+     * @param courceId
+     * @return
+     */
+    EducationalAdministration selectCourceByCourceId(Integer courceId);
+
+    /**
+     * 新增课程
+     * @param record
+     * @return
+     */
+    int addCource(EducationalAdministration record);
+
+    /**
+     * 修改课程
+     * @param record
+     * @return
+     */
+    int updateCource(EducationalAdministration record);
+
+    /**
+     * 删除课程
+     * @param teachername
+     * @return
+     */
+    int deleteCourceByTeachername(EducationalAdministration teachername);
 }
