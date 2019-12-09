@@ -34,8 +34,7 @@
       subtitle, content, create_time, 
       pictuer)
     values (#{announcementId,jdbcType=INTEGER}, #{schoolId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
-      #{subtitle,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{pictuer,jdbcType=LONGVARBINARY})
+      #{subtitle,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{pictuer,jdbcType=LONGVARBINARY})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.Announcement" >
     <!--
@@ -48,7 +47,6 @@
       title = #{title,jdbcType=VARCHAR},
       subtitle = #{subtitle,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
       pictuer = #{pictuer,jdbcType=LONGVARBINARY}
     where announcement_id = #{announcementId,jdbcType=INTEGER}
   </update>

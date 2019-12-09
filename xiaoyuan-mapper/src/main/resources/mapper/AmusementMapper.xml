@@ -36,7 +36,7 @@
       status, create_time)
     values (#{amusemenId,jdbcType=INTEGER}, #{schoolId,jdbcType=INTEGER}, #{amusementname,jdbcType=VARCHAR}, 
       #{type,jdbcType=VARCHAR}, #{videoname,jdbcType=VARCHAR}, #{time,jdbcType=TIME}, 
-      #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+      #{status,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.Amusement" >
     <!--
@@ -50,8 +50,7 @@
       type = #{type,jdbcType=VARCHAR},
       videoname = #{videoname,jdbcType=VARCHAR},
       time = #{time,jdbcType=TIME},
-      status = #{status,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      status = #{status,jdbcType=VARCHAR}
     where amusemen_id = #{amusemenId,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

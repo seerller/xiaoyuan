@@ -34,10 +34,10 @@
     -->
     insert into tl_school_class (class_id, classname, school_ID, 
       schoolname, grade, teachername, 
-      floor, create_time)
+      floor)
     values (#{classId,jdbcType=INTEGER}, #{classname,jdbcType=VARCHAR}, #{schoolId,jdbcType=INTEGER}, 
       #{schoolname,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}, #{teachername,jdbcType=VARCHAR}, 
-      #{floor,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+      #{floor,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.Class" >
     <!--
