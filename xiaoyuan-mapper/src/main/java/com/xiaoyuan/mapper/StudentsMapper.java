@@ -45,13 +45,71 @@ public interface StudentsMapper extends BaseMapper<StudentsMapper>{
      */
     int updateByPrimaryKey(Students record);
 
+    /**
+     * 查询学生信息
+     * @return
+     */
     List<Students> selectStudents();
 
+    /**
+     * 学生转校
+     * @param schoolname
+     * @return
+     */
     int changeStudentsSchool(Students schoolname);
 
+    /**
+     * 学生转班
+     * @param classname
+     * @return
+     */
     int changeStudentsClass(Students classname);
 
+    /**
+     * 冻结学生
+     * @param status
+     * @return
+     */
     int frozeStudent(String status);
 
+    /**
+     * 学生留级
+     * @param grade
+     * @return
+     */
     int failStudent(Students grade);
+
+    /**
+     * 查询学生健康信息
+     * @return
+     */
+    List<Students> selectStudentsHealth();
+
+    /**
+     * 查询学生具体健康信息
+     * @param studentID
+     * @return
+     */
+    Students selectStudentHealthByStudentID(Integer studentID);
+
+    /**
+     * 新增学生健康信息
+     * @param record
+     * @return
+     */
+    int addStudnetHealth(Students record);
+
+    /**
+     * 修改学生健康信息
+     * @param studentID
+     * @return
+     */
+    int updateStudentHealth(Integer studentID);
+
+    /**
+     * 删除学生健康信息
+     * @param studentID
+     * @return
+     */
+    int deleteStudentHealth(Integer studentID);
 }

@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/mapper/educational-administration")
-@Api(value = "/EducationalAdministration", description = "教务管理模块")
+@Api(value = "/EducationalAdministration", description = "教务管理控制层")
 public class EducationalAdministrationController extends BaseController {
     @Autowired
     EducationalAdministrationServiceImpl educationalAdministrationService;

@@ -80,6 +80,31 @@ public class StudentsServiceImpl implements IStudentsService {
     }
 
     @Override
+    public List<Students> selectStudentsHealth() {
+        return null;
+    }
+
+    @Override
+    public Students selectStudentHealthByStudentID(Integer studentID) {
+        return null;
+    }
+
+    @Override
+    public int addStudnetHealth(Students record) {
+        return 0;
+    }
+
+    @Override
+    public int updateStudentHealth(Integer studentID) {
+        return 0;
+    }
+
+    @Override
+    public int deleteStudentHealth(Integer studentID) {
+        return 0;
+    }
+
+    @Override
     public boolean save(Students entity) {
         return false;
     }

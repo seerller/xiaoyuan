@@ -25,7 +25,7 @@ import java.util.List;
  * @author jobob
  * @since 2019-11-26
  */
-@Api(value = "/School", description = "学校管理模块")
+@Api(value = "/School", description = "学校管理控制层")
 @RestController
 @RequestMapping("/mapper/school")
 public class SchoolController extends BaseController {

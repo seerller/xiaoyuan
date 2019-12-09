@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@EnableSwagger2
 @SpringBootApplication
 @MapperScan(value = "com.xiaoyuan.mapper")
 public class XiaoyuanSpringbootApplication extends SpringBootServletInitializer{

@@ -88,5 +88,39 @@ public interface IStudentsService extends IService<Students> {
      */
     int failStudent(Students grade);
 
+    /**
+     * 查询学生健康信息
+     * @return
+     */
+    List<Students> selectStudentsHealth();
+
+    /**
+     * 查询学生具体健康信息
+     * @param studentID
+     * @return
+     */
+    Students selectStudentHealthByStudentID(Integer studentID);
+
+    /**
+     * 新增学生健康信息
+     * @param record
+     * @return
+     */
+    int addStudnetHealth(Students record);
+
+    /**
+     * 修改学生健康信息
+     * @param  studentID
+     * @return
+     */
+    int updateStudentHealth(Integer studentID);
+
+    /**
+     * 删除学生健康信息
+     * @param studentID
+     * @return
+     */
+    int deleteStudentHealth(Integer studentID);
+
 
 }

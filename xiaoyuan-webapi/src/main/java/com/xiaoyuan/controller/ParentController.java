@@ -2,13 +2,14 @@ package com.xiaoyuan.controller;
 
 
 import com.xiaoyuan.controller.common.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- *  前端控制器
+ *  家长控制器
  * </p>
  *
  * @author jobob
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/mapper/parent")
+@Api(value = "/Parent", description = "家长管理控制层")
 public class ParentController extends BaseController {
 
 }

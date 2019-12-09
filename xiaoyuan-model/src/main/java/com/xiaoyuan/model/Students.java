@@ -51,6 +51,8 @@ public class Students implements Serializable {
 
     private String status;
 
+    private String health;
+
     private Date createTime;
 
     public Integer getStudentId() {

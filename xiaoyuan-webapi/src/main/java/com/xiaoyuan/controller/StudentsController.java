@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author jobob
  * @since 2019-11-26
  */
-@Api(value = "/Students", description = "学生管理模块")
+@Api(value = "/Students", description = "学生管理控制层")
 @RestController
 @RequestMapping("/mapper/students")
 public class StudentsController extends BaseController{

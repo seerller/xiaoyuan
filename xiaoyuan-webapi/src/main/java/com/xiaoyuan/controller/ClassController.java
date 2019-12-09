@@ -25,7 +25,7 @@ import org.apache.commons.collections.CollectionUtils;
  */
 @RestController
 @RequestMapping("/mapper/class")
-@Api(value = "/Class", description = "班级管理模块")
+@Api(value = "/Class", description = "班级管理控制层")
 public class ClassController extends BaseController{
     @Autowired
     ClassServiceImpl classService;
