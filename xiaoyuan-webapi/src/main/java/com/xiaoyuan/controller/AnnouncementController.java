@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author jobob
  * @since 2019-11-26
  */
-@Api(value = "/Announcement", description = "公告管理模块")
+@Api(value = "/Announcement", description = "公告管理控制层")
 @RestController
 @RequestMapping("/mapper/announcement")
 public class AnnouncementController {

@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/mapper/amusement")
-@Api(value = "/Amusement", description = "娱乐管理模块")
+@Api(value = "/Amusement", description = "娱乐管理控制层")
 public class AmusementController {
     @Autowired
     AmusementServiceImpl amusementService;
