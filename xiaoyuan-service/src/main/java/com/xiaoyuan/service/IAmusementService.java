@@ -48,4 +48,31 @@ public interface IAmusementService extends IService<Amusement> {
      */
     int updateByPrimaryKey(Amusement record);
 
+    /**
+     * 查询娱乐信息
+     * @return
+     */
+    List<Amusement> selectAmusment();
+
+    /**
+     * 新增娱乐信息
+     * @param record
+     * @return
+     */
+    int addAmusement(Amusement record);
+
+    /**
+     * 修改娱乐信息
+     * @param amusementId
+     * @return
+     */
+    int updateAmusement(Integer amusementId);
+
+    /**
+     * 删除娱乐信息
+     * @param amusementId
+     * @return
+     */
+    int deleteAmusementById(Integer amusementId);
+
 }

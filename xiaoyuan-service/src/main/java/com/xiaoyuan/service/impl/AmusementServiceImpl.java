@@ -52,6 +52,26 @@ public class AmusementServiceImpl  implements IAmusementService {
     }
 
     @Override
+    public List<Amusement> selectAmusment() {
+        return null;
+    }
+
+    @Override
+    public int addAmusement(Amusement record) {
+        return 0;
+    }
+
+    @Override
+    public int updateAmusement(Integer amusementId) {
+        return 0;
+    }
+
+    @Override
+    public int deleteAmusementById(Integer amusementId) {
+        return 0;
+    }
+
+    @Override
     public boolean save(Amusement entity) {
         return false;
     }
