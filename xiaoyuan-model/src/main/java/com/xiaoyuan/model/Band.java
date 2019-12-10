@@ -35,6 +35,16 @@ public class Band implements Serializable {
     @TableField("student_ID")
     private Integer studentId;
 
+    private String studentname;
+
+    private String schoolname;
+
+    private String classname;
+
+    private String parentname;
+
+    private String Status;
+
     private Date createTime;
 
     public Integer getBandId() {

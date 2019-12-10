@@ -9,6 +9,11 @@
     -->
     <id column="band_ID" property="bandId" jdbcType="INTEGER" />
     <result column="student_ID" property="studentId" jdbcType="INTEGER" />
+    <result column="studentname" property="studentname" jdbcType="VARCHAR"/>
+    <result column="schoolname" property="schoolname" jdbcType="VARCHAR"/>
+    <result column="classname" property="classname" jdbcType="VARCHAR"/>
+    <result column="parentname" property="parentname" jdbcType="VARCAHR"/>
+    <result column="status" property="Status" jdbcType="VARCHAR"/>
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
@@ -61,4 +66,46 @@
     select band_ID, student_ID, create_time
     from tl_school_band
   </select>
+
+  <select id="selectBand" resultMap="BaseResultMap">
+    <!--查询手环信息-->
+    select schoolname, classname, studentname, band_ID, parentname, status
+    from tl_school_band
+  </select>
+
+  <insert id="addBand" parameterType="com.xiaoyuan.model.Band">
+    <!--新增手环-->
+    insert into tl_school_band(
+    schoolname, classname, studentname, band_ID, parentname
+    )
+    values (
+    #(schoolname,jdbcType=VARCHAR ),
+    #(classname,jdbcType=VARCHAR ),
+    #(studentname,jdbcType=VARCHAR ),
+    #(band_ID,jdbcType=VARCHAR ),
+    #(parentname,jdbcType=INTEGER )
+    )
+  </insert>
+
+  <update id="updateBand" parameterType="com.xiaoyuan.model.Band">
+    <!--修改手环-->
+    update tl_school_band
+    set schoolname = #(schoolname,jdbcType=VARCHAR ),
+    classname = #(classname,jdbcType=VARCHAR ),
+    studentname = #(studentname,jdbcType=VARCHAR ),
+    band_ID = #(band_ID,jdbcType=VARCHAR ),
+    parentname = #(parentname,jdbcType=INTEGER )
+  </update>
+
+  <delete id="deleteBand" parameterType="java.lang.Integer">
+    <!--删除手环-->
+    delete from tl_school_band
+    where band_ID = #(band_ID,jdbcType=VARCHAR )
+  </delete>
+
+  <update id="updateBandStatus" parameterType="com.xiaoyuan.model.Band">
+    <!--绑定手环-->
+    update tl_school_band
+    set status = #(Status,jdbcType=VARCHAR)
+  </update>
 </mapper>
