@@ -25,6 +25,18 @@ public class FeedbackController extends BaseController {
         return resultSuccess(selectFeedback());
     }
 
+    @RequestMapping(value = "/insertReply",method = RequestMethod.POST)
+    @ApiOperation(value = "回复反馈", notes = "")
+    public MessageBean insertReply(Feedback record){
+        return resultSuccess(insertReply(record));
+    }
+
+    @RequestMapping(value = "updateStatus", method = RequestMethod.GET)
+    @ApiOperation(value = "更改反馈信息状态", notes = "根据是否回复消息更改反馈信息状态")
+    public MessageBean updateStatus(@RequestParam(value = "回复") String Status){
+        return resultSuccess(feedbackService.updateStatus(Status="已解答"));
+    }
+
     @RequestMapping(value = "/deleteFeedback", method = RequestMethod.POST)
     @ApiOperation(value = "删除反馈信息", notes = "根究主键删除反馈信息")
     public MessageBean deleteFeedback(Integer feedbackId){

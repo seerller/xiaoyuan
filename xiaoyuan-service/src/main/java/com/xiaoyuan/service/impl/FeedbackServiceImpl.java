@@ -26,6 +26,16 @@ public class FeedbackServiceImpl implements IFeedbackService {
     }
 
     @Override
+    public int insertReply(Feedback record) {
+        return 0;
+    }
+
+    @Override
+    public int updateStatus(String Status) {
+        return 0;
+    }
+
+    @Override
     public int deleteFeedback(Integer feedbackId) {
         return 0;
     }

@@ -14,6 +14,20 @@ public interface FeedbackMapper extends BaseMapper<FeedbackMapper> {
     List<Feedback> selectFeedback();
 
     /**
+     * 添加反馈信息
+     * @param record
+     * @return
+     */
+    int insertReply(Feedback record);
+
+    /**
+     * 修改反馈状态
+     * @param Status
+     * @return
+     */
+    int updateStatus(String Status);
+
+    /**
      * 删除反馈信息
      * @param feedbackId
      * @return

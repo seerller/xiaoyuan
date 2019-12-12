@@ -24,6 +24,21 @@
         from tl_school_feedback
     </select>
 
+    <insert id="insertReply" parameterType="om.xiaoyuan.model.Feedback">
+        <!--添加反馈信息-->
+        insert into tl_school_feedback(reply)
+        valus #{reply,jdbcType=VARCAHR}
+        where feedback_id=#{feedbackId,jdbcType=INTEGER}
+    </insert>
+
+    <update id="updateStatus" parameterType="com.xiaoyuan.model.Feedback">
+        <!--修改反馈状态-->
+        update tl_school_feedback
+        set status = #{Status,jdbcType=VARCAHR}
+        where feedback_id=#{feedbackId,jdbcType=INTEGER}
+    </update>
+
+
     <delete id="deleteFeedback" parameterType="com.xiaoyuan.model.Feedback">
         <!--删除反馈信息-->
         delete from tl_school_feedback

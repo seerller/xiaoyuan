@@ -40,3 +40,4 @@ public class NewsController extends BaseController {
     }
 
 }
+
