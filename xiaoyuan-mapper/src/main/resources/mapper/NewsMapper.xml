@@ -69,4 +69,43 @@
     select news_id, school_ID, title, subtitle, content, create_time, pictuer
     from tl_school_news
   </select>
+
+  <insert id="addNews" parameterType="com.xiaoyuan.model.News">
+    <!--新增新闻-->
+    insert into tl_school_news(
+    schoolname, title, subtitle,content
+    )
+    values (
+    #{schoolname,jdbcType=VARCHAR},
+    #{title,jdbcType=VARCHAR},
+    #{subtitle,jdbcType=VARCHAR},
+    #{content,jdbcType=VARCHAR}
+    )
+  </insert>
+
+  <update id="updateNews" parameterType="com.xiaoyuan.model.News">
+    <!--修改新闻-->
+    update tl_school_news
+    set schoolname = #{schoolname,jdbcType=VARCHAR},
+    title = #{title,jdbcType=VARCHAR},
+    subtitle = #{subtitle,jdbcType=VARCHAR},
+    content = #{content,jdbcType=VARCHAR}
+  </update>
+
+  <delete id="deleteNews" parameterType="com.xiaoyuan.model.News">
+    <!--删除新闻-->
+    delete from tl_school_news
+    where  where news_id = #{newsId,jdbcType=INTEGER}
+  </delete>
+
+  <select id="selectNews" resultMap="BaseResultMap">
+    <!--查询新闻-->
+    select news_id, schoolname, title, subtitle,create_time
+    from tl_school_news
+  </select>
+
+  <select id="selectNewById" resultMap="BasaeResultMap">
+    <!--查询新闻详情-->
+    select title, subtitle,content,create_time
+  </select>
 </mapper>
