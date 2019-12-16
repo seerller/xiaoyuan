@@ -44,4 +44,46 @@ public interface NewsMapper extends BaseMapper<NewsMapper>{
      * @mbggenerated Mon Nov 25 17:09:46 CST 2019
      */
     int updateByPrimaryKey(News record);
+
+    /**
+     * 查询新闻
+     * @return
+     */
+    List<News> selectNews();
+
+    /**
+     * 查询新闻详情
+     * @param newsId
+     * @return
+     */
+    News selectNewByIdc(Integer newsId);
+
+    /**
+     * 新增新闻
+     * @param record
+     * @return
+     */
+    int addNews(News record);
+
+    /**
+     * 上传图片
+     * @param picture
+     * @return
+     */
+    String uploadPicture(String picture);
+
+    /**
+     * 修改新闻
+     * @param newsId
+     * @return
+     */
+    int updateNews(Integer newsId);
+
+
+    /**
+     * 删除新闻
+     * @param newsId
+     * @return
+     */
+    int deleteNews(Integer newsId);
 }

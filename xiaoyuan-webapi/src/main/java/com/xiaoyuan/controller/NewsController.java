@@ -2,6 +2,7 @@ package com.xiaoyuan.controller;
 
 
 import com.xiaoyuan.controller.common.BaseController;
+import com.xiaoyuan.model.News;
 import com.xiaoyuan.service.impl.NewsServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
 import io.swagger.annotations.Api;
@@ -33,11 +34,24 @@ public class NewsController extends BaseController {
         return selectAll();
     }
 
+    @RequestMapping(value = "/addNews", method = RequestMethod.POST)
+    @ApiOperation(value = "新增新闻", notes = "")
+    public MessageBean addNews(News record){
+        return resultSuccess(addNews(record));
+    }
+
+    @RequestMapping(value = "/updateNews", method = RequestMethod.POST)
+    @ApiOperation(value = "修改新闻", notes = "根据主键修改新闻")
+    public MessageBean updateNews(Integer newsId){
+        return resultSuccess(updateNews(newsId));
+    }
+
     @RequestMapping(value = "/deleteByPriamryKey", method = RequestMethod.POST)
     @ApiOperation(value = "删除新闻", notes = "删除新闻")
     public void deleteByPrimaryKey(Integer newsId){
         newsService.deleteByPrimaryKey(newsId);
     }
+
 
 }
 

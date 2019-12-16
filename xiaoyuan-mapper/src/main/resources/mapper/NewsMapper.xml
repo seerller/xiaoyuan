@@ -92,6 +92,14 @@
     content = #{content,jdbcType=VARCHAR}
   </update>
 
+  <insert id="uploadPicture" parameterType="com.xiaoyuan.model.News">
+    <!--上传图片-->
+    insert into tl_school_news
+    (picture)
+    values (#{picture,jdbcType=VARCHAR})
+  </insert>
+
+
   <delete id="deleteNews" parameterType="com.xiaoyuan.model.News">
     <!--删除新闻-->
     delete from tl_school_news
