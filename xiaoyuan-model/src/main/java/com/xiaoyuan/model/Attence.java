@@ -22,6 +22,14 @@ public class Attence implements Serializable{
 
     private Integer attenceId;
 
+    @TableField("school_ID")
+    private Integer schoolID;
+
+    @TableField("class_id")
+    private Integer classId;
+
+    private String classname;
+
     @TableField("stuedent_ID")
     private Integer studentID;
 

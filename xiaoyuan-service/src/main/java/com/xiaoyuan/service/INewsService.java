@@ -77,8 +77,9 @@ public interface INewsService extends IService<News> {
     /**
      * 上传图片
      * @param picture
+     * @return
      */
-    String addPicture(String picture);
+    String uploadPicture(String picture);
 
     /**
      * 修改新闻
@@ -87,12 +88,6 @@ public interface INewsService extends IService<News> {
      */
     int updateNews(Integer newsId);
 
-    /**
-     * 修改新闻图片
-     * @param picture
-     * @return
-     */
-    String updatePicture(String picture);
 
     /**
      * 删除新闻

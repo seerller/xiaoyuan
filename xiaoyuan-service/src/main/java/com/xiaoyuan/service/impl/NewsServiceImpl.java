@@ -73,19 +73,23 @@ public class NewsServiceImpl implements INewsService {
     }
 
     @Override
-    public String addPicture(String picture) {
-        return null;
+    public String uploadPicture(String picture) {
+        News upload = new News();
+        upload.setPicture(picture);
+        if(upload.getPicture() == null){
+            return "图片地址为空";
+        }
+        int rowCount = newsMapper.insertPicture(upload.getPicture());
+        logger.error(rowCount + "");
+        if(rowCount > 0)
+            return "图片地址存储失败";{
+            return "图片地址存储成功";
+        }
     }
-
 
     @Override
     public int updateNews(Integer newsId) {
         return 0;
-    }
-
-    @Override
-    public String updatePicture(String picture) {
-        return null;
     }
 
 

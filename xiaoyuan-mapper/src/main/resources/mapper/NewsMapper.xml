@@ -92,7 +92,7 @@
     content = #{content,jdbcType=VARCHAR}
   </update>
 
-  <insert id="uploadPicture" parameterType="com.xiaoyuan.model.News">
+  <insert id="insertPicture" parameterType="String">
     <!--上传图片-->
     insert into tl_school_news
     (picture)

@@ -70,7 +70,7 @@ public interface NewsMapper extends BaseMapper<NewsMapper>{
      * @param picture
      * @return
      */
-    String uploadPicture(String picture);
+    int insertPicture(String picture);
 
     /**
      * 修改新闻
