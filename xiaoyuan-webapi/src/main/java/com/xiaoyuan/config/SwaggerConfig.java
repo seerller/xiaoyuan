@@ -25,7 +25,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("智慧校园管理系统接口文档")
-                .description("为前端调用service的接口文档")
+                .description("为前端调用service的接口文档" +
+                        "带* 为app可用接口")
                 .termsOfServiceUrl("http://blog.csdn.net/saytime")
                 .version("1.0")
                 .build();

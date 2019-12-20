@@ -65,7 +65,7 @@ public interface INewsService extends IService<News> {
      * @param newsId
      * @return
      */
-    News selectNewByIdc(Integer newsId);
+    News selectNewById(Integer newsId);
 
     /**
      * 新增新闻
@@ -74,12 +74,6 @@ public interface INewsService extends IService<News> {
      */
     int addNews(News record);
 
-    /**
-     * 上传图片
-     * @param picture
-     * @return
-     */
-    String uploadPicture(String picture);
 
     /**
      * 修改新闻

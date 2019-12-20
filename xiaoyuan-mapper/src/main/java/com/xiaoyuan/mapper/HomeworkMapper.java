@@ -46,4 +46,10 @@ public interface HomeworkMapper extends BaseMapper<HomeworkMapper>{
      * @mbggenerated Mon Nov 25 17:09:46 CST 2019
      */
     int updateByPrimaryKey(Homework record);
+
+    /**
+     * 查询作业
+     * @return
+     */
+    List<Homework> selectHomework();
 }

@@ -145,4 +145,34 @@ public class HomeworkServiceImpl implements IHomeworkService {
     public BaseMapper<Homework> getBaseMapper() {
         return null;
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer homeworkId) {
+        return 0;
+    }
+
+    @Override
+    public int insert(Homework record) {
+        return 0;
+    }
+
+    @Override
+    public Homework selectByPrimaryKey(Integer homeworkId) {
+        return null;
+    }
+
+    @Override
+    public List<Homework> selectAll() {
+        return null;
+    }
+
+    @Override
+    public int updateByPrimaryKey(Homework record) {
+        return 0;
+    }
+
+    @Override
+    public List<Homework> selectHomework() {
+        return null;
+    }
 }

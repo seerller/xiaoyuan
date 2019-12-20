@@ -13,7 +13,7 @@
     <result column="subtitle" property="subtitle" jdbcType="VARCHAR" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="pictuer" property="pictuer" jdbcType="LONGVARBINARY" />
+    <result column="ImgUrl" property="ImgUrl" jdbcType="VARCHAR" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     <!--
@@ -73,13 +73,14 @@
   <insert id="addNews" parameterType="com.xiaoyuan.model.News">
     <!--新增新闻-->
     insert into tl_school_news(
-    schoolname, title, subtitle,content
+    schoolname, title, subtitle,content,ImgUrl
     )
     values (
     #{schoolname,jdbcType=VARCHAR},
     #{title,jdbcType=VARCHAR},
     #{subtitle,jdbcType=VARCHAR},
-    #{content,jdbcType=VARCHAR}
+    #{content,jdbcType=VARCHAR},
+    #{ImgUrl，jdbcType=VARCHAR}
     )
   </insert>
 
@@ -89,15 +90,9 @@
     set schoolname = #{schoolname,jdbcType=VARCHAR},
     title = #{title,jdbcType=VARCHAR},
     subtitle = #{subtitle,jdbcType=VARCHAR},
-    content = #{content,jdbcType=VARCHAR}
+    content = #{content,jdbcType=VARCHAR},
+    ImgUrl = #{ImgUrl，jdbcType=VARCHAR}
   </update>
-
-  <insert id="insertPicture" parameterType="String">
-    <!--上传图片-->
-    insert into tl_school_news
-    (picture)
-    values (#{picture,jdbcType=VARCHAR})
-  </insert>
 
 
   <delete id="deleteNews" parameterType="com.xiaoyuan.model.News">
@@ -108,12 +103,12 @@
 
   <select id="selectNews" resultMap="BaseResultMap">
     <!--查询新闻-->
-    select news_id, schoolname, title, subtitle,create_time
+    select news_id, schoolname, title, subtitle,ImgUrl,create_time
     from tl_school_news
   </select>
 
   <select id="selectNewById" resultMap="BasaeResultMap">
     <!--查询新闻详情-->
-    select title, subtitle,content,create_time
+    select title, subtitle,ImgUrl,content,create_time
   </select>
 </mapper>

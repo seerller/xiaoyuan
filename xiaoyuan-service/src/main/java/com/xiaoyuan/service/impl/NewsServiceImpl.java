@@ -28,7 +28,7 @@ import java.util.function.Function;
 @Service
 public class NewsServiceImpl implements INewsService {
     @Autowired
-    NewsMapper newsMapper;
+    private NewsMapper newsMapper;
 
     private static Logger logger = LoggerFactory.getLogger("NewsServiceImpl.class");
 
@@ -63,7 +63,7 @@ public class NewsServiceImpl implements INewsService {
     }
 
     @Override
-    public News selectNewByIdc(Integer newsId) {
+    public News selectNewById(Integer newsId) {
         return null;
     }
 
@@ -72,7 +72,7 @@ public class NewsServiceImpl implements INewsService {
         return 0;
     }
 
-    @Override
+    /*@Override
     public String uploadPicture(String picture) {
         News upload = new News();
         upload.setPicture(picture);
@@ -85,7 +85,7 @@ public class NewsServiceImpl implements INewsService {
             return "图片地址存储失败";{
             return "图片地址存储成功";
         }
-    }
+    }*/
 
     @Override
     public int updateNews(Integer newsId) {

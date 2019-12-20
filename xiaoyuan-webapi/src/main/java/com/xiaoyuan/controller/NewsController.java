@@ -28,30 +28,36 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/mapper/news")
-@Api(value = "/News", description = "新闻管理控制层")
+@Api(value = "/News", description = "新闻管理控制层*")
 public class NewsController extends BaseController {
     @Autowired
-    NewsServiceImpl newsService;
+   private NewsServiceImpl newsService;
 
-    private final ResourceLoader resourceLoader;
+    //private final ResourceLoader resourceLoader;
 
-    private static final Logger logger = LoggerFactory.getLogger("NewsController.class");
+    //private static final Logger logger = LoggerFactory.getLogger("NewsController.class");
 
-    @Autowired
+    /*@Autowired
     public NewsController(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
+    }*/
+
+    @RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+    @ApiOperation(value = "查询新闻信息*", notes = "查询新闻列表")
+    public MessageBean selectAll(){
+        return resultSuccess(newsService.selectAll());
     }
 
-    @RequestMapping(value = "/selectAll", method = RequestMethod.POST)
-    @ApiOperation(value = "查询新闻信息", notes = "查询新闻信息")
-    public MessageBean selectAll(){
-        return selectAll();
+    @RequestMapping(value = "/selectNewById", method = RequestMethod.POST)
+    @ApiOperation(value = "查询新闻详情*", notes = "根据主键查询新闻详情")
+    public MessageBean selectNewById(Integer newsId){
+        return resultSuccess(newsService.selectNewById(newsId));
     }
 
     @RequestMapping(value = "/addNews", method = RequestMethod.POST)
     @ApiOperation(value = "新增新闻", notes = "")
     public MessageBean addNews(News record){
-        return resultSuccess(addNews(record));
+        return resultSuccess(newsService.save(record));
     }
 
     @RequestMapping(value = "/updateNews", method = RequestMethod.POST)
@@ -67,13 +73,13 @@ public class NewsController extends BaseController {
     }
 
 
-    @Value("${web.upload-path}")
+   /* @Value("${web.upload-path}")
     private String path;
 
     @Value("${server.port}")
     private String port;
 
-    @RequestMapping(value = "/uploadPicture", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/uploadPicture", method = RequestMethod.POST)
     @ApiOperation(value = "上传图片", notes = "")
     public @ResponseBody String upload(@RequestParam(value = "上传") MultipartFile file, HttpServletRequest request){
         String contentType = file.getContentType();
@@ -97,7 +103,7 @@ public class NewsController extends BaseController {
         logger.error("拼接好的图片上传路径为：" + picture);
 
         return "upload img success，请到上传路径查看！" + newsService.uploadPicture(picture);
-    }
+    }*/
 
 
 }
