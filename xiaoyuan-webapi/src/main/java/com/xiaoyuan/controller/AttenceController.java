@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/mapper/attence")
+@Api(value = "/Attence", description = "考勤控制层")
 public class AttenceController extends BaseController{
     @Autowired
     AttenceServiceImpl attenceService;
