@@ -79,4 +79,11 @@
     files, create_time
     from tl_school_homework
   </select>
+
+  <select id="selectHomework" resultMap="BaseResultMap">
+    <!--查询作业-->
+    select classname, subject, content
+    from tl_school_homework
+    group by classname, subject
+  </select>
 </mapper>

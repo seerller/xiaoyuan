@@ -23,21 +23,21 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/mapper/educational-administration")
-@Api(value = "/EducationalAdministration", description = "教务管理控制层")
+@Api(value = "/EducationalAdministration", description = "教务管理控制层*")
 public class EducationalAdministrationController extends BaseController {
     @Autowired
-    EducationalAdministrationServiceImpl educationalAdministrationService;
+    private EducationalAdministrationServiceImpl educationalAdministrationService;
 
     @RequestMapping(value = "/selectCource", method = RequestMethod.GET)
     @ApiOperation(value = "查询课程", notes = "查询所有课程")
     public MessageBean selectCource(){
-        return resultSuccess(selectCource());
+        return resultSuccess(educationalAdministrationService.selectCource());
     }
 
     @RequestMapping(value = "/selectCourceByCourceId", method = RequestMethod.POST)
     @ApiOperation(value = "查询课程信息", notes = "根据主键查询课程信息")
     public MessageBean selectCourceByCourceId(Integer courceId){
-        return resultSuccess(selectCourceByCourceId(courceId));
+        return resultSuccess(educationalAdministrationService.selectCourceByCourceId(courceId));
     }
 
     @RequestMapping(value = "/addCource", method = RequestMethod.POST)

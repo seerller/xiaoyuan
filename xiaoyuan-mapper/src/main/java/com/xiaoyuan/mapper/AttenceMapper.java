@@ -47,4 +47,29 @@ public interface AttenceMapper extends BaseMapper<AttenceMapper> {
      * @mbggenerated Mon Nov 25 17:09:46 CST 2019
      */
     int updateByPrimaryKey(Attence record);
+
+    /**
+     * 查询班级
+     * @return
+     */
+    List<Attence> selectClassName(Integer schoolID);
+
+    /**
+     * 查询学生
+     * @return
+     */
+    List<Attence> selectStudentname(Integer classId);
+
+    /**
+     * 查询详情
+     * @return
+     */
+    List<Attence> selectAttence(Integer studentID);
+
+    /**
+     * 考勤统计
+     * @param studentID
+     * @return
+     */
+    List<Attence> selectAttenceCount(Integer studentID);
 }

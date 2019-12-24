@@ -6,7 +6,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.xiaoyuan.model.News;
 import com.xiaoyuan.mapper.NewsMapper;
 import com.xiaoyuan.service.INewsService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.mybatis.logging.Logger;
+import org.mybatis.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,9 @@ import java.util.function.Function;
 @Service
 public class NewsServiceImpl implements INewsService {
     @Autowired
-    NewsMapper newsMapper;
+    private NewsMapper newsMapper;
+
+    private static Logger logger = LoggerFactory.getLogger("NewsServiceImpl.class");
 
     @Override
     public int deleteByPrimaryKey(Integer newsId) {
@@ -53,6 +56,48 @@ public class NewsServiceImpl implements INewsService {
     public int updateByPrimaryKey(News record) {
         return 0;
     }
+
+    @Override
+    public List<News> selectNews() {
+        return null;
+    }
+
+    @Override
+    public News selectNewById(Integer newsId) {
+        return null;
+    }
+
+    @Override
+    public int addNews(News record) {
+        return 0;
+    }
+
+    /*@Override
+    public String uploadPicture(String picture) {
+        News upload = new News();
+        upload.setPicture(picture);
+        if(upload.getPicture() == null){
+            return "图片地址为空";
+        }
+        int rowCount = newsMapper.insertPicture(upload.getPicture());
+        logger.error(rowCount + "");
+        if(rowCount > 0)
+            return "图片地址存储失败";{
+            return "图片地址存储成功";
+        }
+    }*/
+
+    @Override
+    public int updateNews(Integer newsId) {
+        return 0;
+    }
+
+
+    @Override
+    public int deleteNews(Integer newsId) {
+        return 0;
+    }
+
 
     @Override
     public boolean save(News entity) {

@@ -54,4 +54,40 @@ public interface INewsService extends IService<News> {
      */
     int updateByPrimaryKey(News record);
 
+    /**
+     * 查询新闻
+     * @return
+     */
+    List<News> selectNews();
+
+    /**
+     * 查询新闻详情
+     * @param newsId
+     * @return
+     */
+    News selectNewById(Integer newsId);
+
+    /**
+     * 新增新闻
+     * @param record
+     * @return
+     */
+    int addNews(News record);
+
+
+    /**
+     * 修改新闻
+     * @param newsId
+     * @return
+     */
+    int updateNews(Integer newsId);
+
+
+    /**
+     * 删除新闻
+     * @param newsId
+     * @return
+     */
+    int deleteNews(Integer newsId);
+
 }

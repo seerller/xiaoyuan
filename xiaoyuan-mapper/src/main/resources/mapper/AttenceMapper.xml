@@ -8,6 +8,9 @@
       This element was generated on Mon Nov 25 17:09:46 CST 2019.
     -->
     <id column="attence_id" property="attenceId" jdbcType="INTEGER" />
+    <result column="school_ID" property="schoolID" jdbcType="INTEGER"/>
+    <result column="class_id" property="classId" jdbcType="INTEGER"/>
+    <result column="classname" property="classname" jdbcType="VARCHAR"/>
     <result column="student_ID" property="studentId" jdbcType="INTEGER" />
     <result column="studentname" property="studentname" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
@@ -73,4 +76,32 @@
     select attence_id, student_ID, studentname, status, times, break, review, create_time
     from tl_school_attence
   </select>
+
+  <select id="selectClassName" resultMap="BaseResultMap" >
+    <!--查询班级-->
+    select classname from tl_school_attence
+    where shool_ID = #{schoolID}
+  </select>
+
+  <select id="selectStudentname" resultMap="BaseResultMap">
+    <!--查询学生-->
+    select studentname from tl_school_attence
+    where classname = #{classname}
+  </select>
+
+  <select id="selectAttence" resultMap="BaseResultMap">
+    <!--查询详情-->
+    select status, create_time
+    from tl_school_attence
+    where student_ID = #{studentID}
+  </select>
+
+  <select id="selectAttenceCount" resultMap="BaseResultMap">
+    <!--考勤统计-->
+    select status, count(attence_id)
+    group by status
+    where student_ID = #{student_ID}
+  </select>
+
+
 </mapper>

@@ -7,6 +7,8 @@ import com.xiaoyuan.model.Students;
 import com.xiaoyuan.service.impl.StudentsServiceImpl;
 import com.xiaoyuan.tools.MessageBean;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,20 +58,24 @@ public class StudentsController extends BaseController{
 
     @RequestMapping(value = "/changeStudentsSchool", method = RequestMethod.POST)
     @ApiOperation(value = "学生转校", notes = "学生转校")
-    public void changeStudentsSchool(@RequestParam(value = "schoolname") Students schoolname){
-        studentsService.changeStudentsSchool(schoolname);
+    @ApiImplicitParams(
+            {@ApiImplicitParam(value = "主键id",name = "studentId",dataType = "Integer",paramType ="query",required = true),
+                    @ApiImplicitParam(value = "学校名称",name = "schoolname",dataType = "Integer",paramType ="query",required = false)})
+    public MessageBean changeStudentsSchool(Students schoolname){
+        return resultSuccess(changeStudentsSchool(schoolname));
     }
 
     @RequestMapping(value = "/changeStudentsClass", method = RequestMethod.POST)
     @ApiOperation(value = "学生转班", notes = "学生转班")
-    public void changeStudensClass(@RequestParam(value="classname") Students classname){
-        studentsService.changeStudentsClass(classname);
+    public MessageBean changeStudensClass(Students classname){
+       return resultSuccess(studentsService.changeStudentsClass(classname));
     }
 
     @RequestMapping(value = "/frozeStudents", method = RequestMethod.POST)
     @ApiOperation(value = "冻结学生", notes = "冻结学生")
-    public void frozeStudents(@RequestParam(value = "status") String status){
-        studentsService.frozeStudent("冻结");
+    public MessageBean frozeStudents(String status){
+
+        return resultSuccess(studentsService.frozeStudent("冻结"));
     }
 
     @RequestMapping(value = "/failStudent", method = RequestMethod.POST)

@@ -145,4 +145,29 @@ public class BandServiceImpl implements IBandService {
     public BaseMapper<Band> getBaseMapper() {
         return null;
     }
+
+    @Override
+    public List<Band> selectBand() {
+        return null;
+    }
+
+    @Override
+    public int addBand(Band record) {
+        return 0;
+    }
+
+    @Override
+    public int updateBand(Integer bandId) {
+        return 0;
+    }
+
+    @Override
+    public int deleteBand(Integer bandId) {
+        return 0;
+    }
+
+    @Override
+    public int updateBandStatus(String Status) {
+        return 0;
+    }
 }

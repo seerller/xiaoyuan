@@ -1,4 +1,5 @@
 package com.xiaoyuan.model;
+
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;
 import java.sql.Blob;
@@ -9,40 +10,35 @@ import java.util.Date;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.stereotype.Repository;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("tl_school_attence")
+@TableName("tl_school_feedback")
 @Repository
-public class Attence implements Serializable{
+public class Feedback implements Serializable{
+
     private static final long serialVersionUID = 1L;
 
-    private Integer attenceId;
+    private Integer feedbackId;
 
     @TableField("school_ID")
     private Integer schoolID;
 
-    @TableField("class_id")
+    private String schoolname;
+
     private Integer classId;
 
     private String classname;
 
-    @TableField("stuedent_ID")
-    private Integer studentID;
+    private String feedbackperson;
 
-    private String studentname;
+    private String content;
 
-    private String status;
+    private String Status;
 
-    private Integer times;
-
-    private String leave;
-
-    private String review;
+    private String reply;
 
     private Date createTime;
-
 }
